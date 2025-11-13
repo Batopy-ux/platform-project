@@ -1,0 +1,17 @@
+# java / maven
+target/
+*.class
+*.war
+*.jar
+/.idea
+/.vscode
+.DS_Store
+
+# node / frontend
+node_modules/
+
+# docker
+docker-compose.override.yml
+
+# OS
+Thumbs.db
