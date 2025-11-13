@@ -14,3 +14,4 @@ Client -> API Gateway -> user-service / post-service
 post-service -> produces `posts` topic -> search-service (indexing)
                                        -> feed-service (timeline writes)
                                        -> notification-service (optional)
+    
