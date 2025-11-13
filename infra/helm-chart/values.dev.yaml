@@ -1,0 +1,12 @@
+image:
+  repository:
+  tag: latest
+
+user-service:
+  replicaCount: 1
+
+post-service:
+  replicaCount: 1
+
+search-service:
+  replicaCount: 1
