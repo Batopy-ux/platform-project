@@ -1,4 +1,4 @@
-package main.java.com.platform.user_service.domain;
+package com.platform.user_service.domain;
 
 import jakarta.persistence.*;
 import java.time.OffsetDateTime;

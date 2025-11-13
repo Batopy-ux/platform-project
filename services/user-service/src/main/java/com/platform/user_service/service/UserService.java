@@ -1,9 +1,10 @@
-package com.platform.userservice.service;
+package com.platform.user_service.service;
 
-import com.platform.userservice.domain.User;
-import com.platform.userservice.repository.UserRepository;
+import com.platform.user_service.domain.User;
+import com.platform.user_service.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class UserService{
@@ -20,9 +21,8 @@ public class UserService{
         if(repo.findByUsername(username).isPresent()){
             throw new IllegalArgumentException("username exists");
         }
-
         User u = new User();
-        u.setUserName(username);
+        u.setUsername(username);
         u.setEmail(email);
         u.setPasswordHash(passwordEncoder.encode(rawPassword));
         u.setRoles("ROLE_USER");
