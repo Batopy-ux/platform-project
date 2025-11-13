@@ -4,8 +4,8 @@ package com.platform.search_service;
 public class HealthController{
 
     @GetMapping("/health")
-    public String healthCheck({
-        return "Post service is up and running"
-    })
+    public String healthCheck(){
+        return "Post service is up and running";
+    }
 
 }
