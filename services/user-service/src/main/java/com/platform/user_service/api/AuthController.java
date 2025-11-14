@@ -1,14 +1,11 @@
 package com.platform.user_service.api;
 
-import com.platform.user_service.domain.User;
 import com.platform.user_service.service.UserService;
 import com.platform.user_service.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import com.platform.user_service.api.AuthRequest;
-import com.platform.user_service.api.AuthResponse;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")

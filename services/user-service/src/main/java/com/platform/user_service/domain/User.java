@@ -6,23 +6,23 @@ import java.time.OffsetDateTime;
 @Entity
 @Table(name = "users")
 public class User{
-    @id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Colummn(nullable=false, unique=true)
+    @Column(nullable=false, unique=true)
     private String username;
 
     @Column(nullable=false, unique=true)
     private String email;
 
-    @Column(name = "paassword_hash", nullable=false)
+    @Column(name = "password_hash", nullable=false)
     private String passwordHash;
 
     private String roles;
 
     @Column(name="created_at")
-    private OffsetDateTime createdAt = new OffsetDateTime.now();
+    private OffsetDateTime createdAt = OffsetDateTime.now();
 
     // Getters and Setters
     public Long getId() {
