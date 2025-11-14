@@ -31,9 +31,10 @@ public class AuthController {
     public ResponseEntity<AuthResponse> authLogin(@RequestBody AuthRequest req){
         var user = userService.findByUsername(req.username());
         if(user == null) return ResponseEntity.status(404).build();
-        if(passwordEncoder.matches(req.password(), user.getPasswordHash())){
-            String token = jwtProvider.generateToken(user.getUsername());
-            return ResponseEntity.ok(new AuthResponse(token, "Bearer"));
+        if(!passwordEncoder.matches(req.password(), user.getPasswordHash())){
+            return ResponseEntity.status(503).build();
         }
+        String token = jwtProvider.generateToken(user.getUsername());
+        return ResponseEntity.ok(new AuthResponse(token, "Bearer"));
     }
 }

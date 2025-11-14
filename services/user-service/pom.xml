@@ -55,11 +55,20 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+			<version>11.16.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<!-- Flyway DB plugin for PostgreSQL (required so Flyway recognizes PG 15.x) -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-database-postgresql</artifactId>
+			<version>11.16.0</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- JWT: jjwt -->
