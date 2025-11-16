@@ -23,7 +23,7 @@ public class JwtProvider {
         Date now = new Date();
         Date expiry = new Date(now.getTime() + expirationMs);
 
-        return Jwts.builder().setSubject(username).setIssuedAt(now).setExpiration(expiry).signWith(key).compact();
+        return Jwts.builder().setSubject(username).setIssuedAt(now).setExpiration(expiry).signWith(key, SignatureAlgorithm.HS256).compact();
     }
 
     public String getUsernameFromToken(String token){
