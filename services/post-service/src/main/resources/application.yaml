@@ -1,9 +1,16 @@
 spring:
   application:
     name: post-service
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      default-topic: posts
 
 server:
-  port: 8080
+  port: 8081
 
 logging:
   level:
